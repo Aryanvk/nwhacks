@@ -1,7 +1,7 @@
 <?php
-$servername = "localhost";
+$servername = "104.198.159.88";
 $username = "root";
-$password = "root";
+$password = "Azin.v1373";
 $dbname = "fit_buddy";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
