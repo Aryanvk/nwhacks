@@ -1,16 +1,16 @@
 <?php
-$servername = "104.198.159.88";
+$servername = "localhost";
 $username = "root";
-$password = "Azin.v1373";
+$password = "root";
 $dbname = "fit_buddy";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
-// $PName=$_POST['PName'];
 if ($conn->connect_error) {
  die("Connection failed: " . $conn->connect_error);
 }
-$query = "SELECT * FROM trainer";
+$query = "SELECT * FROM Trainers";
+
 $result = $conn->query($query);
 if ($result->num_rows > 0) {
  // output data of each row
@@ -19,6 +19,7 @@ if ($result->num_rows > 0) {
  echo "<tr>
  <th>ID</th>
  <th>Name</th>
+ <th>Focus</th>
  <th>Rating</th>
  <th>Gym</th>
  <th>GymID</th>
@@ -27,6 +28,7 @@ if ($result->num_rows > 0) {
     echo "<tr>
     <td>". $row["TrainerID"]. "</td>
     <td> ". $row["Name"]. "</td>
+    <td> ". $row["focus"]. "</td>
     <td>". $row["Rating"] . "</td>
     <td>". $row["Gym"] . "</td>
     <td>". $row["GymID"] . "</td>
